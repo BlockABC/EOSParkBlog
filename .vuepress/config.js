@@ -31,7 +31,7 @@ function genSidebarConfig() {
             collapsable: false,
             children: [
                 '',
-                'arm1',
+                'ram1',
             ]
         }
     ]
