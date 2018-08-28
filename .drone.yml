@@ -1,0 +1,36 @@
+pipeline:
+  # 从缓存同步node_modules
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+    - ./node_modules
+    volumes:
+    - /tmp/cache/drone/eospark_blog:/cache
+
+  # build，不部署
+  build:
+    image: node:8
+    commands:
+    - npm install
+    - npm run build
+
+  # 将 node_modules 同步回缓存
+  rebuild-cache:
+    image: drillster/drone-volume-cache
+    rebuild: true
+    mount:
+    - ./node_modules
+    volumes:
+    - /tmp/cache/drone/eospark_blog:/cache
+
+  # 部署正式环境
+  deploy_prod:
+    image:  drillster/drone-rsync
+    hosts: ['47.75.181.212']
+    user: root
+    secrets: [ rsync_key ]
+    source: ./dist/
+    target: /data/code/eospark_blog
+    when:
+      branch: [master]
