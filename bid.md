@@ -1,5 +1,5 @@
 
-<center><h1>EOSPark杂谈：账户竞拍小插曲</h1></center>
+# EOSPark杂谈：账户竞拍小插曲
 
 <p align="right">*作者：specer*</p>
 
