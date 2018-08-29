@@ -1,11 +1,11 @@
 
 # EOSPark杂谈：账户竞拍小插曲
 
-<p align="right">*作者：specer*</p>
+<p align="right">作者：specer</p>
 
-<p align="right">*联系邮箱：specer@eospark.com*</p>
+<p align="right">联系邮箱：specer@eospark.com</p>
 
-<p align="right">*日期：2018.7.5*</p>
+<p align="right">日期：2018.7.5</p>
 
 
 
