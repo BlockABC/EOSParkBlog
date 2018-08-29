@@ -2,6 +2,14 @@
 
 # 系统合约接口说明v1.2.1
 
+<p align="right">作者：specer</p>
+
+<p align="right">联系邮箱：specer@eospark.com</p>
+
+<p align="right">日期：2018.8.29</p>
+
+
+
 ## 写接口，要钱的那种
 
 ## delegatebw
@@ -342,7 +350,7 @@ cleos set account permission [OPTIONS] account permission authority [parent]
 
 
 
-##linkauth & unlinkauth
+## linkauth & unlinkauth
 
 #### 用法
 
