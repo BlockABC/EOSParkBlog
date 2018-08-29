@@ -5,6 +5,8 @@ module.exports = {
     dest: "./dist",
     head: [
         ['link', {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css'}],
+        ['script', {type: 'text/javascript', async: 'async', src: 'https://www.googletagmanager.com/gtag/js?id=UA-120212654-2'}],
+        ['script', {src: './ga.js'}]
     ],
     themeConfig: {
         nav: [
