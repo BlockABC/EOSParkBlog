@@ -10,11 +10,15 @@
 
 
 
+本文是关于目前系统合约接口的详细说明，已经是本人的所有精华了，有些接口没写的，要么是太简单懒得介绍，要么就是我自己也还没搞懂的。文档会不定期更新，有新的东西就会写上去，如果有什么地方写错了的，欢迎联系指正，邮箱、微信公众帐号、电报都可以。
+
+
+
 ## 写接口，要钱的那种
 
-## delegatebw
+### delegatebw
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system delegatebw [OPTIONS] from receiver stake_net_quantity stake_cpu_quantity
@@ -23,7 +27,7 @@ cleos system delegatebw [OPTIONS] from receiver stake_net_quantity stake_cpu_qua
 --transfer	是否直接赠送抵押的EOS。意思就是当这个设置为1的时候，from给receiver抵押的EOS就归为receiver账下了，到时候赎回操作只能由receiver有权限操作；当这个值为0的时候，代表这些抵押的EOS只是租借给receiver的，from账户随时有权限可以赎回到from账户。
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -35,7 +39,7 @@ cleos system delegatebw [OPTIONS] from receiver stake_net_quantity stake_cpu_qua
 }
 ```
 
-#### 说明
+##### 说明
 
 账户blueredy5253给账户blueredy5253抵押了价值0.0000 EOS的网络带宽和价值为10.0000 EOS的CPU资源（非赠与）。详情见[这里](https://eospark.com/MainNet/tx/e74ee9e76b9c3fa3e64bfabd097ba25604c5e4b175c8f48cf7fab941e32d3379)
 
@@ -43,15 +47,15 @@ cleos system delegatebw [OPTIONS] from receiver stake_net_quantity stake_cpu_qua
 
 
 
-## undelegatebw
+### undelegatebw
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system undelegatebw [OPTIONS] from receiver unstake_net_quantity unstake_cpu_quantity
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -62,15 +66,15 @@ cleos system undelegatebw [OPTIONS] from receiver unstake_net_quantity unstake_c
 }
 ```
 
-#### 说明
+##### 说明
 
 账户blueredy5253 从账户fuckitfuckit赎回了之前抵押给他的价值0.0000 EOS的网络带宽和价值2.0000 EOS的CPU计算资源。详情见[这里](https://eospark.com/MainNet/tx/416e8a69c606ba564491a50ec9510e3771e15cd300ff2494208166a524b82af5)
 
 
 
-## buyram & buyrambytes
+### buyram & buyrambytes
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system buyram [OPTIONS] payer receiver amount
@@ -78,7 +82,7 @@ cleos system buyram [OPTIONS] payer receiver amount
 -k,--kbytes	以字节为单位购买内存。如果设置了这个OPTION，那么后面的amount就是字节数，代表我想买多少字节的内存；否则amount代表我想要花费多少EOS数量来买内存。通俗来讲就是，前者是我想买10斤苹果，后者则是我想买价值20块的苹果，到手多少斤我不关心。
 ```
 
-#### 参数
+##### 参数
 
 ```json
 //不带--kbytes参数
@@ -96,23 +100,23 @@ cleos system buyram [OPTIONS] payer receiver amount
 }
 ```
 
-#### 说明
+##### 说明
 
-_不带--kbytes参数：_账户blueredy5253给账户mburhanuddin买了价值0.3000 EOS的RAM。如果两账户相同就是给自己买的。详情见[这里](https://eospark.com/MainNet/tx/00dc6ee677fb4f740c769fbd83980f7bd7ebf97b0c71906cca888d6c290b578a)
+_不带--kbytes参数：_ 账户blueredy5253给账户mburhanuddin买了价值0.3000 EOS的RAM。如果两账户相同就是给自己买的。详情见[这里](https://eospark.com/MainNet/tx/00dc6ee677fb4f740c769fbd83980f7bd7ebf97b0c71906cca888d6c290b578a)
 
-_带--kbytes参数：_账户blueredy5253给账户fuckitfuckit买了4096B的RAM。如果两账户相同就是给自己买的。详情见[这里](https://eospark.com/MainNet/tx/842ce91143a3b7a9b39a9eaf2d1c465735c85cc041f39d40efeb26a78d78231e)
+_带--kbytes参数：_ 账户blueredy5253给账户fuckitfuckit买了4096B的RAM。如果两账户相同就是给自己买的。详情见[这里](https://eospark.com/MainNet/tx/842ce91143a3b7a9b39a9eaf2d1c465735c85cc041f39d40efeb26a78d78231e)
 
 
 
-## sellram
+### sellram
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system sellram [OPTIONS] account bytes
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -121,15 +125,15 @@ cleos system sellram [OPTIONS] account bytes
 }
 ```
 
-#### 说明
+##### 说明
 
 账户g4ydomzzhege卖出了199B的RAM。详情见[这里](https://eospark.com/MainNet/tx/28a213b216bba30c97991bbaa513d5ca116192d7fbaa80d65768d14c13616e6d)
 
 
 
-## setcode & setabi
+### setcode & setabi
 
-#### 用法
+##### 用法
 
 ```bash
 cleos set contract [OPTIONS] account contract-dir [wasm-file] [abi-file]
@@ -138,7 +142,7 @@ cleos set code [OPTIONS] account code-file
 cleos set abi [OPTIONS] account abi-file
 ```
 
-#### 参数
+##### 参数
 
 ```json
 //setcode
@@ -155,21 +159,21 @@ cleos set abi [OPTIONS] account abi-file
 }
 ```
 
-#### 说明
+##### 说明
 
 账户g4ydomzzhege部署了一个智能合约。[详情](https://eospark.com/MainNet/tx/aeafad170f41721cdb65a9bf0b6442a0bfdcae243c18351aa5c3222a370b0c31)
 
 
 
-## regproducer
+### regproducer
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system regproducer [OPTIONS] account producer_key [url] [location]
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -180,21 +184,21 @@ cleos system regproducer [OPTIONS] account producer_key [url] [location]
 }
 ```
 
-#### 说明
+##### 说明
 
 账户eosauthority注册成为了节点。[详情](https://eospark.com/MainNet/tx/3530094107f9c457c3285e2e039376758ed072ed35b86292aa3b42a01ad9a0a9)
 
 
 
-## unregprod
+### unregprod
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system unregprod [OPTIONS] account
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -202,22 +206,22 @@ cleos system unregprod [OPTIONS] account
 }
 ```
 
-#### 说明
+##### 说明
 
 账户eoskunmingbp取消了自己的节点身份。[详情](https://eospark.com/MainNet/tx/4d98ccbef5153548dc266a516b4a9584c35fc844836785c5af81edadce066b0c)
 
 
 
-## regproxy & unregproxy
+### regproxy & unregproxy
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system regproxy [OPTIONS] proxy
 cleos system unregproxy [OPTIONS] proxy
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -226,15 +230,15 @@ cleos system unregproxy [OPTIONS] proxy
 }
 ```
 
-#### 说明
+##### 说明
 
 账户galaxypirate注册成为代理，isproxy为0就是取消代理身份。[详情](https://eospark.com/MainNet/tx/788e6b8107ca7fd0835d76665468022e40606bbe130a16669d1c5b9f2815ff8d)
 
 
 
-## voteproducer
+### voteproducer
 
-#### 用法
+##### 用法
 
 ```bash
 #自己手动投票
@@ -243,7 +247,7 @@ cleos system voteproducer prods [OPTIONS] voter producers...
 cleos system voteproducer proxy [OPTIONS] voter proxy
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -253,21 +257,21 @@ cleos system voteproducer proxy [OPTIONS] voter proxy
 }
 ```
 
-#### 说明
+##### 说明
 
 当`参数`里的proxy字段值为空的时候，账户eosmesodotio给eosmesodotio投了一票；当proxy有值的时候，账户eosmesodotio将投票权委托给代理proxy了。前者使用的`用法`里的第一行命令的用法，后者使用的第二行命令的用法。
 
 
 
-## claimrewards
+### claimrewards
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system claimrewards [OPTIONS] owner
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -275,21 +279,21 @@ cleos system claimrewards [OPTIONS] owner
 }
 ```
 
-#### 说明
+##### 说明
 
 节点eoschaintech申领了EOS奖励。这个奖励就归owner所有，所以节点可以选择把奖励送给其他账户，一般没人这么做。[详情](https://eospark.com/MainNet/tx/fb56720e2d2861ba51c27b48765784fb470c3956a8c7a29bb106cce06d52d163)
 
 
 
-## bidname
+### bidname
 
-#### 用法
+##### 用法
 
 ```bash
 cleos system bidname [OPTIONS] bidder newname bid
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -299,22 +303,22 @@ cleos system bidname [OPTIONS] bidder newname bid
 }
 ```
 
-#### 说明
+##### 说明
 
 账户g4zdgmztgege以0.0001 EOS的价格竞拍pigdog帐号。[详情](https://eospark.com/MainNet/tx/4a570c1219bc02ae530311fd6927e4618d479207fbdd180720fae6dd5ffef963)
 
 
 
-## updateauth & deleteauth
+### updateauth & deleteauth
 
-#### 用法
+##### 用法
 
 ```bash
 cleos set account permission [OPTIONS] account permission authority [parent]
 #当authority为NULL时代表deleteauth操作，当其有值时代表updateauth
 ```
 
-#### 参数
+##### 参数
 
 ```json
 //updateauth
@@ -342,7 +346,7 @@ cleos set account permission [OPTIONS] account permission authority [parent]
 }
 ```
 
-#### 说明
+##### 说明
 
 `updateauth`示例表示账户eos121dacsky创建了一个名为`abc`权限组，该权限组下面的帐号公钥为EOS6whTX2fYZCEv5quTtm6zrW2m2fe5Si134sJG3yBpcmBTy4d7VM， [详情](https://eospark.com/MainNet/tx/4cc4d9fb69765d10ef9dfc05226fccee580e5203afc03caa4166ec3b9672288d)。
 
@@ -350,16 +354,16 @@ cleos set account permission [OPTIONS] account permission authority [parent]
 
 
 
-## linkauth & unlinkauth
+### linkauth & unlinkauth
 
-#### 用法
+##### 用法
 
 ```bash
 cleos set action permission [OPTIONS] account code type requirement
 #当requirement为NULL时代表unlinkauth操作，当其有值时代表linkauth
 ```
 
-#### 参数
+##### 参数
 
 ```json
 //linkauth
@@ -378,7 +382,7 @@ cleos set action permission [OPTIONS] account code type requirement
 }
 ```
 
-#### 说明
+##### 说明
 
 `linkauth`表示账户wangshanshan授权其`active1`权限组操作合约eosio.token里的transfer接口。说白了就是允许`active1`权限去操作EOS的转账行为。[详情](https://eospark.com/MainNet/tx/779fb939e95a39bf50571adfbe2c3647d6554bdf001f8517189fdf94286d3030)
 
@@ -386,15 +390,15 @@ cleos set action permission [OPTIONS] account code type requirement
 
 
 
-## newaccount
+### newaccount
 
-#### 用法
+##### 用法
 
 ```bash
 cleos create account [OPTIONS] creator name OwnerKey [ActiveKey]
 ```
 
-#### 参数
+##### 参数
 
 ```json
 {
@@ -421,15 +425,15 @@ cleos create account [OPTIONS] creator name OwnerKey [ActiveKey]
 }
 ```
 
-#### 说明
+##### 说明
 
 账户itokenpocket创建了一个名为themessidona的账户。[详情](https://eospark.com/MainNet/tx/c61d9b04c8c49adc9f460945afd6e2593728d4104cf728aaef64650dd109d616)
 
 
 
-## setramrate
+### setramrate
 
-#### 说明
+##### 说明
 
 只有系统账户才能操作的接口，用于设置每出一个块增加多少内存。可以通过下面的命令才获取这个值：
 
@@ -458,9 +462,9 @@ curl https://eu1.eosdac.io/v1/chain/get_table_rows -X POST -d '{"scope":"eosio",
 
 
 
-## setparams
+### setparams
 
-#### 说明
+##### 说明
 
 只有系统账户才能操作的接口，用于设置全网的一些全局变量。可以通过下面的命令获取这些值：
 
@@ -510,17 +514,17 @@ curl https://eu1.eosdac.io/v1/chain/get_table_rows -X POST -d '{"scope":"eosio",
 
 
 
-## rmvproducer
+### rmvproducer
 
-#### 说明
+##### 说明
 
 只有系统账户才能操作的接口，用于取消某节点的节点资格，可以用这个来制裁作恶节点……
 
 
 
-## setpriv
+### setpriv
 
-#### 说明
+##### 说明
 
 只有系统账户才能操作的接口，给账户设置特权。至于有啥特权，小弟还不清楚。
 
@@ -611,7 +615,3 @@ curl https://eu1.eosdac.io/v1/chain/get_table_rows -X POST -d '{"scope":"eosio",
 ```
 
 
-
----
-
-以上基本是本人关于系统合约总结的所有精华了，有些接口没写的，要么是太简单懒得介绍，要么就是我自己也还没搞懂的。本文档会不定期更新，有新的东西就会写上去，如果有什么地方写错了的，欢迎联系指正，邮箱、微信公众帐号、电报都可以。
