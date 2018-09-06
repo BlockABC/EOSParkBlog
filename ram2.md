@@ -18,7 +18,7 @@ RAM扩容方案已经实施了大半个月了，那段时间团队的事情比�
 
 
 
-### 代码的改动
+## 代码的改动
 
 1. RAM扩容的细节可以看[官方源码](https://github.com/EOSIO/eosio.contracts/blob/master/eosio.system/src/eosio.system.cpp#L79)，总结起来就是今后每出一个块新增1KB的RAM到可用RAM池子里。
 2. RAM兑换公式里修正了[指数](https://github.com/EOSIO/eosio.contracts/blob/master/eosio.system/src/exchange_state.cpp#L8)的错误。不过这个修复也无伤大雅，因为可以看到通过[之前文章](https://eospark.com/ram.html)里所写的推导过程，这个指数实际上最后会被约掉。新的代码依旧没有严格按照[bancor算法白皮书](https://about.bancor.network/protocol/)里写的公式来实现。其实这个也无关紧要，因为EOS并没有用到bancor算法的精华，仅仅是用来当作一个中间货币而已，其实本质上跟bancor没有任何关系。
@@ -37,15 +37,19 @@ RAM扩容方案已经实施了大半个月了，那段时间团队的事情比�
 
 
 
-### 对之前结论的影响
+## 对之前结论的影响
 
-尽管修正了指数，但是单位EOS兑换多少RAM的公式==依旧生效==，因为上面说了推导过程中这个指数会被约掉，感兴趣的同学可以自己去试试。
+尽管修正了指数，但是单位EOS兑换多少RAM的公式__依旧生效__，因为上面说了推导过程中这个指数会被约掉，感兴趣的同学可以自己去试试。
 
-<center><h3>$UnitEOSforRAM=\frac{C}{1+B}≈\frac{C}{B}$</h3></center>
+
+$UnitEOSforRAM=\frac{C}{1+B}≈\frac{C}{B}$
+
 
 同理单位RAM兑换多少EOS的公式也有效：
 
-<center><h3>$UnitRAMforEOS=\frac{B}{1+C}≈\frac{B}{C}$</h3></center>
+
+$UnitRAMforEOS=\frac{B}{1+C}≈\frac{B}{C}$
+
 
 大家可以从现在的数据验证上面两个公式的正确性。
 
@@ -53,7 +57,7 @@ RAM扩容方案已经实施了大半个月了，那段时间团队的事情比�
 
 由于扩容方案的影响，之前得到的那个比较有趣的结论已经失效了：
 
-<center><del><h4>无论RAM市场如何波动，B和C的乘积是==几乎==保持不变的。</h4></del></center>
+<center><del><h4>无论RAM市场如何波动，B和C的乘积是__几乎__保持不变的。</h4></del></center>
 
 
 
@@ -61,21 +65,27 @@ RAM扩容方案已经实施了大半个月了，那段时间团队的事情比�
 
 还是以买入RAM为例，B、C变化情况为：
 
- $B_1 = B_0 + X_0$
+ $B_1 = B_0 + X_0$ 
 
- $C_1 = C_0 - RAM+△C_1 = \frac{B_0C_0}{X_0+B_0}+△C_1$
+
+ $C_1 = C_0 - RAM+△C_1 = \frac{B_0C_0}{X_0+B_0}+△C_1$ 
 
 
 
 △C_1为这期间增发的RAM容量。继续：
 
-$B_1C_1 = B_0C_0+B_1△C_1$
+
+ $B_1C_1 = B_0C_0+B_1△C_1$ 
+
 
 同样的：
 
-$B_2C_2 = B_1C_1+B_2△C_2= B_0C_0+B_1△C_1+B_2△C_2$
+
+$ B_2C_2 = B_1C_1+B_2△C_2= B_0C_0+B_1△C_1+B_2△C_2 $
+
 
 即：
+
 
 $B_nC_n = B_0C_0+B_1△C_1+B_2△C_2+...+B_n△C_n$
 
