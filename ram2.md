@@ -42,13 +42,13 @@ RAM扩容方案已经实施了大半个月了，那段时间团队的事情比�
 尽管修正了指数，但是单位EOS兑换多少RAM的公式__依旧生效__，因为上面说了推导过程中这个指数会被约掉，感兴趣的同学可以自己去试试。
 
 
-$UnitEOSforRAM=\frac{C}{1+B}≈\frac{C}{B}$
+$UnitEOSforRAM=\frac{C}{1+B}=\frac{C}{B}$
 
 
 同理单位RAM兑换多少EOS的公式也有效：
 
 
-$UnitRAMforEOS=\frac{B}{1+C}≈\frac{B}{C}$
+$UnitRAMforEOS=\frac{B}{1+C}=\frac{B}{C}$
 
 
 大家可以从现在的数据验证上面两个公式的正确性。
@@ -72,7 +72,7 @@ $UnitRAMforEOS=\frac{B}{1+C}≈\frac{B}{C}$
 
 
 
-c_1为这期间增发的RAM容量。继续：
+$c_1$为这期间增发的RAM容量。继续：
 
 
  $B_1C_1 = B_0C_0+B_1c_1$ 
