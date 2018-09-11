@@ -3,7 +3,7 @@ typora-root-url: ../../img
 typora-copy-images-to: ../../img
 ---
 
-# EOS的投票
+# EOSPark杂谈：投票篇
 
 <p align="right">作者：specer</p>
 
@@ -138,7 +138,7 @@ $得票股份=得票分数*时间差$
 
 [相关源码](https://github.com/EOSIO/eosio.contracts/blob/v1.3.0/eosio.system/src/producer_pay.cpp#L162-L175)如下：
 
-```c++
+```c
 if( producer_per_vote_pay < min_pervote_daily_pay ) {
          producer_per_vote_pay = 0;
 }
