@@ -83,7 +83,7 @@ $得票股份=得票分数*时间差$
 
 ####  voteproducer
 
-<img :src="$withBase('/projects/bid-1.png')">
+<img :src="$withBase('/projects/vote-1.png')">
 
 | 示例编号 | 操作编号 | 节点的得票股份变化 | 全网的得票股份变化 |
 | -------- | -------- | ------------------ | ------------------ |
@@ -101,7 +101,7 @@ $得票股份=得票分数*时间差$
 ##### 当updtrevision与regproducer/claimrewards之间无涉及到更新得票分数的操作时
 
 
-<img :src="$withBase('/projects/bid-2.png')">
+<img :src="$withBase('/projects/vote-2.png')">
 
 
 | 示例编号 | 操作编号 | 节点获得的奖励 | 全网得票股份的变化 |
@@ -110,7 +110,7 @@ $得票股份=得票分数*时间差$
 | 5        | claim1   | ABHF           | D                  |
 | 6        | claim1`  | I              | BADF               |
 
-<img :src="$withBase('/projects/bid-3.png')">
+<img :src="$withBase('/projects/vote-3.png')">
 
 | 示例编号 | 操作编号 | 节点获得的奖励 | 全网得票股份的变化 |
 | -------- | -------- | -------------- | ------------------ |
@@ -118,7 +118,7 @@ $得票股份=得票分数*时间差$
 
 ##### 当updtrevision与regproducer/claimrewards之间有涉及到更新得票分数的操作时
 
-<img :src="$withBase('/projects/bid-4.png')">
+<img :src="$withBase('/projects/vote-4.png')">
 
 | 示例编号 | 操作编号         | 节点获得的奖励 | 全网得票股份的变化 |
 | -------- | ---------------- | -------------- | ------------------ |
