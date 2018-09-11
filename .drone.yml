@@ -12,8 +12,9 @@ pipeline:
   build:
     image: node:8
     commands:
-    - npm install
-    - npm run build
+      - rm -rf ./node_modules
+      - npm install
+      - npm run build
 
   # 将 node_modules 同步回缓存
   rebuild-cache:
