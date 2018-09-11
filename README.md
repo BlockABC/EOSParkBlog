@@ -4,7 +4,7 @@ avatar: /profile.svg
 head: 'EOSPark Blog'
 info: 'A Powerful EOS Block Explorer'
 ---
-# EOSPark杂谈：RAM篇——基本概念
+# EOSPark杂谈：RAM——基本概念
 
 
 

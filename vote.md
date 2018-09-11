@@ -3,7 +3,7 @@ typora-root-url: ../../img
 typora-copy-images-to: ../../img
 ---
 
-# EOSPark杂谈：投票篇
+# EOSPark杂谈：投票
 
 <p align="right">作者：specer</p>
 
