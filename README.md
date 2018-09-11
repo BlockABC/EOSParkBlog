@@ -18,7 +18,7 @@ info: 'A Powerful EOS Block Explorer'
 
 ## RAM兑换公式
 
-RAM和EOS之间的兑换通过一个中间货币来中转，代码里称之为__RAMCORE__，我们这里不用太多关注它，之前首页上展示过一个简单的RAM兑换EOS的公式，下面推导一下这个公式是怎么来的：
+RAM和EOS之间的兑换通过一个中间货币来中转，代码里称之为 __RAMCORE__ ，我们这里不用太多关注它，之前首页上展示过一个简单的RAM兑换EOS的公式，下面推导一下这个公式是怎么来的：
 
 | 变量 |               含义               | [初始值](https://github.com/EOSIO/eos/blob/v1.0.5/contracts/eosio.system/eosio.system.cpp#L27) |
 | :--: | :------------------------------: | :----------------------------------------------------------: |
@@ -104,10 +104,10 @@ RAM和EOS之间的兑换通过一个中间货币来中转，代码里称之为__
 
 <img :src="$withBase('/projects/arm0-14.png')" alt="arm">
 
-……我^™^实在编不下去了
 
 <img :src="$withBase('/projects/arm0-15.png')" alt="arm">
 
+……我™实在编不下去了
 
 ## 关于B和C
 
