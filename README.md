@@ -104,11 +104,12 @@ RAM和EOS之间的兑换通过一个中间货币来中转，代码里称之为 _
 
 <img :src="$withBase('/projects/arm0-14.png')" alt="arm">
 
-……我^™^实在编不下去了
 
 <img :src="$withBase('/projects/arm0-15.png')" alt="arm">
 
+……我^™^实在编不下去了
 
+</br>
 ## 关于B和C
 
 以上，可以看到能精确买到多少RAM和能卖到多少EOS取决于B和C。
