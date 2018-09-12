@@ -39,7 +39,7 @@ $score\_of\_vote = stake\_of\_EOS * 2^{(current\_year-2000)}$
 
 节点们辛辛苦苦给我们出块、记账，活可不是白干的（每年的服务器成本还是很高的）。再加上EOS通过一些比如竞拍、买卖RAM过程中的手续费等操作会白白烧掉EOS，没有增发的话也会导致通货紧缩，所以有了每年增发不超过5%的EOS。那么这些增发的EOS是怎么分配的呢？
 
-首先，增发的这部分EOS中的80%会打到一个叫[eosio.saving](https://eospark.com/MainNet/account/eosio.saving)的账户里，可以看到现在为止已经有9千多万个EOS了，据说这账户里的EOS会用于社区建设。
+首先，增发的这部分EOS中的80%会打到一个叫[eosio.saving](https://eospark.com/MainNet/account/eosio.saving)的账户里，可以看到现在为止已经有9百多万个EOS了，据说这账户里的EOS会用于社区建设。
 
 然后，剩下的20%就是奖励给节点的了。这部分奖励又分两部分，其中的25%是作为出块奖励，剩下的75%就是我们这篇文章要介绍的投票奖励了。
 
