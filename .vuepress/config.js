@@ -28,18 +28,18 @@ module.exports = {
 
 
 function genSidebarConfig() {
-    return [
-        {
-            collapsable: false,
-            children: [
-                '',
-                'ram1',
-                'ram2',
-                'bid',
-				'system_contract_API_introduction_v1.2.1',
-				'vote',
-                'yqkj'
-            ]
-        }
-    ]
+  return [
+    {
+      collapsable: false,
+      children: [
+        '',
+        'ram1',
+        'ram2',
+        'bid',
+        'system_contract_API_introduction_v1.2.1',
+        'vote',
+        // 'yqkj'
+      ]
+    }
+  ]
 }
