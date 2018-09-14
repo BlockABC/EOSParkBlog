@@ -1,4 +1,8 @@
 ---
+description: 'A Powerful EOS Block Explorer'
+avatar: /profile.svg
+head: 'EOSPark Blog'
+info: 'A Powerful EOS Block Explorer'
 typora-root-url: ../../img
 typora-copy-images-to: ../../img
 ---

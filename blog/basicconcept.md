@@ -1,9 +1,3 @@
----
-description: 'A Powerful EOS Block Explorer'
-avatar: /profile.svg
-head: 'EOSPark Blog'
-info: 'A Powerful EOS Block Explorer'
----
 # EOSPark杂谈：RAM——基本概念
 
 
