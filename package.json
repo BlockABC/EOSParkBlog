@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "A Powerful EOS Block Explorer",
   "scripts": {
-    "dev": "vuepress dev .",
-    "build": "vuepress build ."
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
   },
   "devDependencies": {
     "vuepress": "^0.14.2"

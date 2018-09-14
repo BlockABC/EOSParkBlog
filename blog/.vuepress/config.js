@@ -19,6 +19,7 @@ module.exports = {
         lastUpdated: 'Last Updated',
     },
     markdown: {
+        lineNumbers: true,
         anchor: {permalink: false},
         config: md => {
             md.use(require("markdown-it-katex"));
@@ -33,12 +34,11 @@ function genSidebarConfig() {
       collapsable: false,
       children: [
         '',
-        'ram1',
-        'ram2',
-        'bid',
         'system_contract_API_introduction_v1.2.1',
-        'vote',
-        // 'yqkj'
+        'bid',
+        'ram2',
+        'ram1',
+        'basicconcept'
       ]
     }
   ]
