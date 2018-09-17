@@ -8,7 +8,7 @@ How to make our users get EOS related informations in the fastest way is a propo
 
 
 
-![Alfred+EOSpark](https://github.com/BlockABC/picbec/blob/master/alfred_eospark/Alfred+EOSpark.gif?raw=true)
+<img :src="$withBase('/projects/alfred_eospark/Alfred+EOSpark.gif')" alt="Alfred+EOSpark">
 
 
 
@@ -18,7 +18,7 @@ If you haven't yet installed Alfred, you must try this best efficient tool. Offi
 
 If you have Alfred installed, please follow these two steps:
 
-1. Download  [EOSpark.workflow](https://static.eospark.com/) and double click to install
+1. Download <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="EOSpark.workflow">EOSpark.workflow</a> and double click to install
 2. Search  `ep supereospark` in Alfred which means you start the account page of supereospark on EOSPark.com at the same time.
 
 Asides from searching accounts, it supports searching Smart Contracts/Transaction/Block ID/Public Key Address and etc., you don't need to care about what to search, we will automatically direct to the certain page by reading the content that you entered, try these commands:
@@ -38,7 +38,7 @@ You can make it by means of adding custom web search for your Alfred.
 
 Go to Settings of Alfred and choose **Features** -> **Web Search** -> **Add Custom Search**
 
-![step1](https://github.com/BlockABC/picbec/blob/master/alfred_eospark/step1.png?raw=true)
+<img :src="$withBase('/projects/alfred_eospark/step1.png')" alt="step1">
 
 
 
@@ -52,9 +52,9 @@ Enter informations
 >
 > KeyWord: `ep` 
 
-Other infortaions is not required, Settings done by clicking `Save`. If you want to beautify your search page by uploading LOGO, you can [download LOGO here](https://github.com/BlockABC/picbec/blob/master/alfred_eospark/logo_EOSpark.png?raw=true).
+Other infortaions is not required, Settings done by clicking `Save`. If you want to beautify your search page by uploading LOGO, you can <a :href="$withBase('/projects/alfred_eospark/logo_EOSpark.png')" download="logo_EOSpark.png">download LOGO here</a>.
 
-![step2](https://github.com/BlockABC/picbec/blob/master/alfred_eospark/step2.png?raw=true)
+<img :src="$withBase('/projects/alfred_eospark/step2.png')" alt="step2">
 
 
 
