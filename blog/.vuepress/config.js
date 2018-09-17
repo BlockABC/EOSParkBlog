@@ -34,6 +34,8 @@ function genSidebarConfig() {
       collapsable: false,
       children: [
         '',
+        'alfred_eospark_en'
+        'vote',
         'system_contract_API_introduction_v1.2.1',
         'bid',
         'ram2',
