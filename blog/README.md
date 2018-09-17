@@ -22,7 +22,7 @@ info: 'A Powerful EOS Block Explorer'
 
 如果你已经安装了Alfred，那只需两步：
 
-1. 下载 <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="EOSpark.workflow">EOSpark.workflow</a> 并双击安装
+1. 下载 <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="Search on EOSpark.alfredworkflow">EOSpark.workflow</a> 并双击安装
 2. 在Aflred中输入 `ep supereospark` 即可在EOSpark中打开账户页面 supereospark
 
 除了可以搜索账户以外，还支持搜索智能合约/交易hash/区块ID/区块Hash/公钥地址等等。你无需区分你搜索的是什么，我们会自动根据你输入的内容进行判断，试试以下命令吧：

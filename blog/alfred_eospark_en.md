@@ -18,7 +18,7 @@ If you haven't yet installed Alfred, you must try this best efficient tool. Offi
 
 If you have Alfred installed, please follow these two steps:
 
-1. Download <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="EOSpark.workflow">EOSpark.workflow</a> and double click to install
+1. Download <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="Search on EOSpark.alfredworkflow">EOSpark.workflow</a> and double click to install
 2. Search  `ep supereospark` in Alfred which means you start the account page of supereospark on EOSPark.com at the same time.
 
 Asides from searching accounts, it supports searching Smart Contracts/Transaction/Block ID/Public Key Address and etc., you don't need to care about what to search, we will automatically direct to the certain page by reading the content that you entered, try these commands:
