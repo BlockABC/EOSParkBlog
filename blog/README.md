@@ -40,7 +40,7 @@ Alfred的workflow功能需要付费之后才能使用，但并不意味着你不
 
 #### 第一步
 
-打开Aflred配置页面 **Features** -> **Web Search** -> **Add Custom Search**
+打开Alfred配置页面 **Features** -> **Web Search** -> **Add Custom Search**
 
 <img :src="$withBase('/projects/alfred_eospark/step1.png')" alt="step1">
 
