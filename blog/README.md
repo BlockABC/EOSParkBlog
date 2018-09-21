@@ -4,68 +4,42 @@ avatar: /profile.svg
 head: 'EOSPark Blog'
 info: 'A Powerful EOS Block Explorer'
 ---
-# Alfred + EOSpark，最高效的EOS信息查询方式
+# EOSPark 联合知道创宇，慢雾科技推出 EOSPark SEC
 
-大家好，我们是EOSpark团队。Alfred是我们非常喜爱的一款产品，它极大的提高了我们团队的工作效率。EOSpark是我们非常骄傲的一款产品，我们重新组织了EOS的链上数据，将EOS上发生的一切清晰的展示在用户面前。
+## 关于SEC
 
+安全命题是区块链世界的根本性命题。历史上，我们看到过无数的安全漏洞，让区块链的用户、开发者、投资人遭受了巨大损失。EOS作为最为活跃的智能合约平台，提供了强大的可编程性，具备惠及全世界所有用户的潜力。其上运行的智能合约的安全性，更值得我们关注。为此，我们推出了[EOSpark SEC平台](https://eospark.com/sec)。
+<img :src="$withBase('/projects/sec/sec.png')" alt="sec">
 
+EOSPark SEC是一个EOS智能合约安全信息展示平台，试图通过联合开发者/项目方、安全厂商披露必要的智能合约安全信息，让用户在使用EOS合约时，做到更加放心。
+<img :src="$withBase('/projects/sec/title.png')" alt="title">
+<img :src="$withBase('/projects/sec/manwu.png')" alt="mangwu">
+<img :src="$withBase('/projects/sec/zhidao.png')" alt="zhidao">
 
-如何让用户以最快的方式查询到所需要的EOS相关信息，是我们一直在不断思考的命题。今天，我们将Alfred和EOSpark组合到了一起，推出了一款Alfred插件，实现最高效的EOS信息查询方式。
+传送门：[输入合约名称查询相关安全信息](https://eospark.com/sec)
 
+## 对于EOS用户
 
+您可以直接查询到一个EOS合约的安全信息。包括：
+1. 合约是否通过代码一致性校验（通过一致性校验意味着EOS上运行的代码，与开发者/项目方提供的代码完全一致）
+2. 合约是否经过安全厂商的代码审计（经过审计一般意味着存在安全漏洞可能性较低）
+3. 合约最新的控制权信息
 
-<img :src="$withBase('/projects/alfred_eospark/Alfred+EOSpark.gif')" alt="Alfred+EOSpark">
+## 对于开发者/项目方
 
-### 如何使用
+您可以在EOSPark上公示以上信息，以增强用户对合约安全性的信心。
 
-如果你尚未安装Alfred，那一定要去尝试一下这款效率神器。官方地址：https://www.alfredapp.com/
+如果您的智能合约源代码经内部评估后认定是可开源的，可直接在该智能合约的页面提交源代码，EOSPark将进行实时编译，验证代码一致性。
+如果您的源代码曾经委托安全厂商进行过审计，可向我们提交隐去敏感信息的审计报告。我们将在为您在合约详情页面上做披露。
 
-如果你已经安装了Alfred，那只需两步：
+如果您的源代码尚未经过安全厂商审计，我们建议您选择我们所甄选的优质安全厂商进行代码安全审计。经过审计的代码存在安全漏洞的可能性更小，合约的最终用户也会有更强的信心。
 
-1. 下载 <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="Search on EOSpark.alfredworkflow">EOSpark.workflow</a> 并双击安装
-2. 在Aflred中输入 `ep supereospark` 即可在EOSpark中打开账户页面 supereospark
+如果您已经移交了代码更新权限，我们也将披露该信息。
 
-除了可以搜索账户以外，还支持搜索智能合约/交易hash/区块ID/区块Hash/公钥地址等等。你无需区分你搜索的是什么，我们会自动根据你输入的内容进行判断，试试以下命令吧：
+## 对于安全厂商
 
-* 搜索账户：`ep supereospark`
-* 搜索区块：`ep 16858641` 或 `ep 01013e1145ab86600ce885ac03004bc3f5bee0d52a72d19b3e16636ce157adf9 `
-* 搜索交易：`ep 4a4744a5dd4496e12c239490634e5f0ed04498f2b7b425ed9f9af05051047896`
-* 搜索公钥地址：`ep EOS5P7tbccoAQK51fLND4H3HA13gXCDrNhRJESwEdDfKVBw93GHpk`
+如果您是区块链领域的安全厂商，我们欢迎您入驻EOSPark SEC平台。我们将引导开发者/项目方使用安全厂商提供的源代码审计服务，共同构建安全可信赖的EOS生态。
 
+## 联系我们
+如果您有审计服务咨询，审计报告披露，安全厂商入驻方面需求，请联系：white@eospark.com（7x24小时）
 
-
-### 不是Alfred的付费用户
-
-Alfred的workflow功能需要付费之后才能使用，但并不意味着你不能使用我们的工具。你可以为了你的Alfred添加自定的web search来实现。
-
-#### 第一步
-
-打开Alfred配置页面 **Features** -> **Web Search** -> **Add Custom Search**
-
-<img :src="$withBase('/projects/alfred_eospark/step1.png')" alt="step1">
-
-
-
-#### 第二步
-
-填写信息。
-
-> Search URL: `https://eospark.com/MainNet/search?query={query}`
->
-> Title: `Search on EOSpark`
->
-> KeyWord: `ep`
-
-其他信息不用填写，点击`Save` 配置就完成了。如果你希望使用LOGO让搜索页面更美观，可以在此处<a :href="$withBase('/projects/alfred_eospark/logo_EOSpark.png')" download="logo_EOSpark.png">下载LOGO</a>。
-
-<img :src="$withBase('/projects/alfred_eospark/step2.png')" alt="step2">
-
-
-
-#### 第三步
-
-和前面的使用方法一样，在Alfred中输入ep+关键字即可开始搜索账户。
-
-
-
-希望这个工具可以实在的帮助到你，如果你对这个工具有任何的想法或者建议，欢迎加入我们的Telegram讨论组：https://t.me/eospark
