@@ -34,7 +34,7 @@ function genSidebarConfig() {
       collapsable: false,
       children: [
         '',
-		'decentration',
+        'sec',
         'alfred_eospark',
         'alfred_eospark_en',
         'vote',
