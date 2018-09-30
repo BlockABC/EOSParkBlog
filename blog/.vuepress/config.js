@@ -11,6 +11,7 @@ module.exports = {
     themeConfig: {
         nav: [
             {text: "EOSPark", link: "https://eospark.com/"},
+            {text: "API", link: "https://eospark.com/openapi"},
             {text: "WePromise", link: "https://wepromise.app/"},
         ],
         sidebar: {
@@ -20,7 +21,6 @@ module.exports = {
     },
     markdown: {
         lineNumbers: true,
-        anchor: {permalink: false},
         config: md => {
             md.use(require("markdown-it-katex"));
         }
