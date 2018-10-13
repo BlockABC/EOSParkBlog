@@ -496,7 +496,7 @@ curl https://eu1.eosdac.io/v1/chain/get_table_rows -X POST -d '{"scope":"eosio",
         "max_authority_depth":6,
         "max_ram_size":"76377832448",//当前全网RAM总量，单位：byte
         "total_ram_bytes_reserved":"47486761878",//当前全网被卖出的RAM总量，单位：byte
-        "total_ram_stake":"23804448013",//当前买RAM花费的EOS总量，这个值加上初始化时的100w个EOS正好是eospark首页上显示的“当前EOS池子总量”的值。单位：0.0001 EOS
+        "total_ram_stake":"23804448013",//当前买RAM花费的EOS总量，这个值加上初始化时的100w个EOS正好是EOSPark首页上显示的“当前EOS池子总量”的值。单位：0.0001 EOS
         "last_producer_schedule_update":"2018-08-29T08:00:26.000",//该时间用于记录每一轮21个节点出块后的一些操作逻辑，比如：决定下一轮出块的21个节点、检测账户竞拍逻辑是否满足
         "last_pervote_bucket_fill":"1535529566500000",//用于计算系统增发多少EOS。每次有节点做claimrewards操作时，该值会被重置为当时的时间
         "pervote_bucket":232830088,//用于投票增发的EOS总数量，每有节点做claimrewards操作，这个值都会先增加，然后再减去由该节点获得的选票的得分占全网选票的得分比例获得相应的奖励。

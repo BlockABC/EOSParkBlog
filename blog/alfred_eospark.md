@@ -1,10 +1,10 @@
-# Alfred + EOSpark，最高效的EOS信息查询方式
+# Alfred + EOSPark，最高效的EOS信息查询方式
 
-大家好，我们是EOSpark团队。Alfred是我们非常喜爱的一款产品，它极大的提高了我们团队的工作效率。EOSpark是我们非常骄傲的一款产品，我们重新组织了EOS的链上数据，将EOS上发生的一切清晰的展示在用户面前。
+大家好，我们是EOSPark团队。Alfred是我们非常喜爱的一款产品，它极大的提高了我们团队的工作效率。EOSPark是我们非常骄傲的一款产品，我们重新组织了EOS的链上数据，将EOS上发生的一切清晰的展示在用户面前。
 
 
 
-如何让用户以最快的方式查询到所需要的EOS相关信息，是我们一直在不断思考的命题。今天，我们将Alfred和EOSpark组合到了一起，推出了一款Alfred插件，实现最高效的EOS信息查询方式。
+如何让用户以最快的方式查询到所需要的EOS相关信息，是我们一直在不断思考的命题。今天，我们将Alfred和EOSPark组合到了一起，推出了一款Alfred插件，实现最高效的EOS信息查询方式。
 
 
 
@@ -16,8 +16,8 @@
 
 如果你已经安装了Alfred，那只需两步：
 
-1. 下载 <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="Search on EOSpark.alfredworkflow">EOSpark.workflow</a> 并双击安装
-2. 在Aflred中输入 `ep supereospark` 即可在EOSpark中打开账户页面 supereospark
+1. 下载 <a :href="$withBase('/projects/alfred_eospark/Search on EOSpark.alfredworkflow')" download="Search on EOSPark.alfredworkflow">EOSPark.workflow</a> 并双击安装
+2. 在Aflred中输入 `ep supereospark` 即可在EOSPark中打开账户页面 supereospark
 
 除了可以搜索账户以外，还支持搜索智能合约/交易hash/区块ID/区块Hash/公钥地址等等。你无需区分你搜索的是什么，我们会自动根据你输入的内容进行判断，试试以下命令吧：
 
@@ -46,11 +46,11 @@ Alfred的workflow功能需要付费之后才能使用，但并不意味着你不
 
 > Search URL: `https://eospark.com/MainNet/search?query={query}`
 >
-> Title: `Search on EOSpark`
+> Title: `Search on EOSPark`
 >
 > KeyWord: `ep`
 
-其他信息不用填写，点击`Save` 配置就完成了。如果你希望使用LOGO让搜索页面更美观，可以在此处<a :href="$withBase('/projects/alfred_eospark/logo_EOSpark.png')" download="logo_EOSpark.png">下载LOGO</a>。
+其他信息不用填写，点击`Save` 配置就完成了。如果你希望使用LOGO让搜索页面更美观，可以在此处<a :href="$withBase('/projects/alfred_eospark/logo_EOSpark.png')" download="logo_EOSPark.png">下载LOGO</a>。
 
 <img :src="$withBase('/projects/alfred_eospark/step2.png')" alt="step2">
 
