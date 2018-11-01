@@ -35,6 +35,7 @@ function genSidebarConfig() {
       collapsable: false,
       children: [
         '',
+        'talk_about_decentralization',
         'sec',
         'alfred_eospark',
         'alfred_eospark_en',
