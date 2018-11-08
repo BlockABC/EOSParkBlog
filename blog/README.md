@@ -5,7 +5,7 @@
 <p align="right">联系邮箱: link@blockabc.com</p>
 
 
-初次接触区块链的朋友都容易把区块链当作虚拟货币来理解，今天这篇教程作为面向入门级的内容对概念上不会进行任何深究，但是既然想要使用“货币”，我们无论如何也绕不过去的一个坎就是拥有一个“钱包”，而 Scatter 就是今天流行的一个 EOS 钱包。由于 Scatter 最近处在从 Chrome Extension 版向 Desktop 版的过渡中，新入门的朋友肯定会疑惑为什么我的 Scatter 和网上的教程都不一样，我是被钓鱼了吗？当然不是，而是因为 Desktop 版太新，往上资料多是 Chrome Extension 版所导致的。所以，为了配合 Eospark 新上线的[需要 Scatter 才能使用的功能](https://eospark.com/MainNet/tool/account-register)，这里就图文并茂的简介一下 Scatter 的使用方法。
+初次接触区块链的朋友都容易把区块链当作虚拟货币来理解，今天这篇教程作为面向入门级的内容对概念上不会进行任何深究，但是既然想要使用“货币”，我们无论如何也绕不过去的一个坎就是拥有一个“钱包”，而 Scatter 就是今天流行的一个 EOS 钱包。由于 Scatter 最近处在从 Chrome Extension 版向 Desktop 版的过渡中，新入门的朋友肯定会疑惑为什么我的 Scatter 和网上的教程都不一样，我是被钓鱼了吗？当然不是，而是因为 Desktop 版太新，网上资料多是 Chrome Extension 版所导致的。所以，为了配合 [EOSPark](https://eospark.com) 新上线的[需要 Scatter 才能使用的功能](https://eospark.com/MainNet/tool/account-register)，这里就图文并茂的简介一下 Scatter 的使用方法。
 
 ::: tip PS
 跟随本教程实践的一个**必要前提是自己拥有一个 EOS 账户，并拥有其公私钥**，但由于篇幅所限本教程不会包含如何创建 EOS 账户相关的说明，请自行谷歌相关资料。
@@ -113,6 +113,22 @@ Scatter 已经启动了，账户也已经添加了，那么剩下的就是签名
 :::tip PS
 Scatter 必须是在运行状态才能够响应 Dapp 的签名请求，所以**在使用 Dapp 前你就需要启动 Scatter**。另一方面来说，**不使用 Dapp 时，退出 Scatter 有助于确保自己的账户安全**。
 :::
+
+
+## Q&A
+
+### 为什么资源不足导致够支付失败？
+
+根据 EOS 底层链设计，用户在 EOS 上执行操作时(例如购买靓号)，实际上是在使用智能合约，智能合约简单来说就是一个程序，程序的运行必须需要消耗一定的 RAM (内存)、Network BandWidth (网络带宽) 、CPU BandWidth (CPU 带宽)等资源，当资源不足时程序就无法运行。
+
+例如：我通过 [supereospark](https://eospark.com/MainNet/account/supereospark) 购买 eospark.x 靓号。想要真正的购买成功就需要保证 [supereospark](https://eospark.com/MainNet/account/supereospark) 账户中拥有足够的 RAM 、 CPU 、 NET 等资源。如果不确定自己的账户当前是否拥有足够的资源，可以前往 [EOSPark](https://eospark.com) 查询自己的账号即可看到，比如目前 [supereospark](https://eospark.com/MainNet/account/supereospark) CPU 资源剩余 0，所以为了保证靓号购买成功，就需要质押一定量 EOS 获取更多 CPU 资源。
+
+![QA-1](/projects/how_to_scatter/qa-1.png)
+
+### 资源不足导致购买失败会造成损失吗？
+
+不会，EOS 会在执行操作，也就是运行智能合约之前会对需要消耗的资源进行验证，当发现资源不足时会直接告诉用户错误信息。那么既然程序都没运行，也就不存在任何消耗会造成损失了。
+
 
 至此，从安装 Scatter 到完成支付的完整流程就结束了，感谢你的阅读。如有不清楚的地方欢迎加我们的官方微信群（二维码如下）或者官方 Telegram: [https://t.me/eospark](https://t.me/eospark) 进行咨询。
 
