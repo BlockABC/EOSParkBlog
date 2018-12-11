@@ -13,7 +13,6 @@ module.exports = {
         nav: [
             {text: "EOSPark", link: "https://eospark.com/"},
             {text: "API", link: "https://eospark.com/openapi"},
-            {text: "WePromise", link: "https://wepromise.app/"},
         ],
         sidebar: {
             '/': genSidebarConfig(),
