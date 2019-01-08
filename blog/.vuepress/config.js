@@ -34,7 +34,7 @@ function genSidebarConfig() {
       collapsable: false,
       children: [
         '',
-		'how_to_use_scatter'
+		'how_to_use_scatter',
         'talk_about_decentralization',
         'sec',
         'alfred_eospark',
