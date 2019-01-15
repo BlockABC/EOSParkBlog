@@ -19,7 +19,7 @@
 eos 的 database 利用 multi_index_container 容器实现了数据的快速增删改查。本文通过详细分析 database::find 模版函数的实现窥探eos的内存模型，eos 的版本是 mainnet-1.5.1 ，文件路径在 eos/libraries/chainbase/include/chainbase/chainbase.hpp。
 
 本文以 get_abi 函数为入口开始分析，
-```
+```cpp
 // eos/plugins/chain_plugin/chain_plugin.cpp 1126 行
 abi_def get_abi( const controller& db, const name& account ) {
    const auto &d = db.db();
@@ -33,7 +33,7 @@ abi_def get_abi( const controller& db, const name& account ) {
 利用 database 的 find 模版函数，模版函数的类型实参分别为 account_object 类型和 by_name 类型（此处 database::find 模版函数的类型参数为3个，最后一个可以通过函数的实际参数类型推导出来即 eosio::chain::name ，所以不需要显式声明），实现通过账户名称快速查找到账户信息。此处我们的第一感觉 database::find 的实现应该是利用关联性容器的 find，比如 std::map 的 find，std::map 内部是红黑树实现的平衡二叉树，理论上它的查找操作复杂度为对数级别。
 # database::find 函数分析
 接下来我们逐行分析 database::find 的代码
-```
+```cpp
 // eos/libraries/chainbase/include/chainbase/chainbase.hpp 887 行
 template< typename ObjectType, typename IndexedByType, typename CompatibleKey >
 const ObjectType* find( CompatibleKey&& key )const
@@ -48,24 +48,24 @@ const ObjectType* find( CompatibleKey&& key )const
 ```
 ### get_index_type 模版类分析
 get_index_type 模版类的内部自定义类型 type 为各个 ObjectType 关联的多索引容器类型，此处 account_object 关联的多索引容器类型为 account_index 。get_index_type 模版类的通用模版定义为：
-```
+```cpp
 // eos/libraries/chainbase/include/chainbase/chainbase.hpp 118 行
 template<typename T>
 struct get_index_type {};
 ```
 各个需要存储的 ObjectType 通过宏 CHAINBASE_SET_INDEX_TYPE 特化此模版类，从而实现了通过 ObjectType 类型找到关联的多索引容器类型。
-```
+```cpp
 #define CHAINBASE_SET_INDEX_TYPE( OBJECT_TYPE, INDEX_TYPE )  \
 namespace chainbase { template<> struct get_index_type<OBJECT_TYPE> { typedef INDEX_TYPE type; }; }
 ```
 ### account_index 多索引容器分析
 理解了此特化过程，可以通过宏，快速找到 ObjectType 关联的 index_type 。搜索代码可得：account_object 关联的类型为 account_index ：
-```
+```cpp
 // eos/libraries/chain/include/eosio/chain/account_object.hpp 80 行
 CHAINBASE_SET_INDEX_TYPE(eosio::chain::account_object, eosio::chain::account_index)
 ```
 具体的 account_object 类型和 account_index 类型如下：
-```
+```cpp
 // eos/libraries/chain/include/eosio/chain/account_object.hpp 15 行
 class account_object : public chainbase::object<account_object_type, account_object> {
     OBJECT_CTOR(account_object,(code)(abi))
@@ -113,7 +113,7 @@ class account_object : public chainbase::object<account_object_type, account_obj
 ### database::get_index 模版函数分析
 
 回到 database 的 find 函数，怎么通过 index_type 类型找到具体的 index_type 类型对象实例，此过程调用模版函数 get_index ，模版函数实参类型为 account_index 类型：
-```
+```cpp
 // eos/libraries/chainbase/include/chainbase/chainbase.hpp 854 行
 template<typename MultiIndexType>
 const generic_index<MultiIndexType>& get_index()const
@@ -128,12 +128,12 @@ const generic_index<MultiIndexType>& get_index()const
 ```
 ### generic_index 模版类分析
 关于 generic_index 模版类型及其 undo 和 commit 此处暂时不展开。eos 通过 database 的 add_index 模版函数添加要存储的 generic_index<index_type> 对象实例，所有的 generic_index<index_type> 实例对象的地址会存储在 database 的成员变量  _index_map 中，以 index_type::value_type::type_id 做为 vector 的下标索引找到 generic_index<index_type> 的对象实例。
-```
+```cpp
 // eos/libraries/chainbase/include/chainbase/chainbase.hpp 256 行
 const index_type& indices()const { return _indices; }
 ```
 通过 generic_index 的 indices 函数我们找到了 index_type 的实例，既 multi_index_container 容器类型的对象实例,然后可以根据索引的 tag 获取获取类似于 std::map 的对象，实现快速查找。
-```
+```cpp
 index_type      _indices;
 ```
 回到 database 的 find 函数，利用 multi_index_container的 get< IndexedByType >() 函数，我们通过 by_name 这个 tag 找到类 std::map 对象，用对数复杂度的 find 函数找到 account_object 对象。实现了通过名称查找账户信息。
