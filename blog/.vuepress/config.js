@@ -34,6 +34,7 @@ function genSidebarConfig() {
       collapsable: false,
       children: [
         '',
+        'attack',
 		'how_to_use_scatter',
         'talk_about_decentralization',
         'sec',
